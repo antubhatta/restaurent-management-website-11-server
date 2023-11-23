@@ -10,7 +10,12 @@ const port = process.env.PORT || 5000;
 // middleware
 app.use(
   cors({
-    origin: ["http://localhost:5173"],
+    origin: [
+      // "http://localhost:5173"
+      'https://restaurent-management-476f8.web.app',
+      'https://restaurent-management-476f8.firebaseapp.com'
+    ],
+   
     credentials: true,
   })
 );
@@ -48,7 +53,7 @@ const client = new MongoClient(uri, {
 async function run() {
   try {
     // Connect the client to the server	(optional starting in v4.7)
-    await client.connect();
+    // await client.connect();
     // Send a ping to confirm a successful connection
 
     // Authentication
